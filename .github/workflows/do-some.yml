@@ -1,0 +1,26 @@
+name: run-script
+
+on:
+  push:               # 任何 push 都触发
+  workflow_dispatch:  # 也支持手动触发
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 迁出代码
+        uses: actions/checkout@v4
+
+      - name: 安装pnpm
+        uses: pnpm/action-setup@master
+
+      - name: 安装Node
+        uses: actions/setup-node@main
+        with:
+          node-version: 22.x
+
+      - name: 安装依赖
+        run: pnpm i
+      
+      - name: 执行核心程序 
+        run: npm run build
