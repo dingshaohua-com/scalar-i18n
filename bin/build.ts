@@ -2,9 +2,9 @@ import { spawnSync } from 'child_process';
 import path from 'path';
 
 const scalarPath = path.resolve('scalar');
-const scalarApiClientPath = path.join(scalarPath, 'packages', 'api-client');
-const scalarComponentsPath = path.join(scalarPath, 'packages', 'components');
-const scalarBuildToolingPath = path.join(scalarPath, 'packages', 'build-tooling');
+// const scalarApiClientPath = path.join(scalarPath, 'packages', 'api-client');
+// const scalarComponentsPath = path.join(scalarPath, 'packages', 'components');
+// const scalarBuildToolingPath = path.join(scalarPath, 'packages', 'build-tooling');
 
 
 

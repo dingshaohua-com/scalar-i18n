@@ -3,7 +3,7 @@ import { execSync, spawnSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 // import { rm } from 'fs/promises';   // ESM
-import fastRm from './fast-rm'
+import fastRm from './helper/fast-rm'
 
 // 删除 scalar 目录（如果存在）
 const scalarDir = path.resolve('scalar');
