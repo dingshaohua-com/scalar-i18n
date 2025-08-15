@@ -29,7 +29,6 @@ jobs:
         run: |
           cp scalar/packages/api-reference/dist/browser/standalone.js scalar.js
 
-  
       - name: 读取 scalar的api-reference版本
         id: pkg
         run: |
