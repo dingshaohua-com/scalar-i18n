@@ -8,7 +8,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: 迁出代码2
+      - name: 迁出代码
         uses: actions/checkout@v4
 
       - name: 安装pnpm
@@ -25,12 +25,24 @@ jobs:
       - name: 执行核心程序 
         run: npm run full-task
 
+      - name: 重命名产物
+        run: |
+          cp scalar/packages/api-reference/dist/browser/standalone.js scalar.js
+
+  
+      - name: 读取 scalar的api-reference版本
+        id: pkg
+        run: |
+          VERSION=$(jq -r '.version' scalar/packages/api-reference/package.json)
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
       - name: 创建 Release 并上传产物
         uses: softprops/action-gh-release@v2
         with:
-          files: scalar/packages/api-reference/dist/browser/standalone.js
+          files: scalar.js
+          tag_name: v${{ steps.pkg.outputs.VERSION }}   # 例如 v1.2.3
           # ② 自动使用当前 tag（例如 v1.2.3）作为 Release 名称
-          tag_name: ${{ github.ref_name }}
+          # tag_name: ${{ github.ref_name }}
           # # ③ 自定义标题
           # name: Release ${{ github.ref_name }}
           # # ④ Release 说明（支持 markdown）
@@ -45,3 +57,4 @@ jobs:
           # prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
