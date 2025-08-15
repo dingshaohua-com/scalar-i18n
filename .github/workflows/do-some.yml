@@ -8,7 +8,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: 迁出代码1
+      - name: 迁出代码2
         uses: actions/checkout@v4
 
       - name: 安装pnpm
