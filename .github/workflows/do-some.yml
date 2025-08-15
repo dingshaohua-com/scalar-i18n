@@ -43,5 +43,5 @@ jobs:
           # draft: false
           # # ⑥ 是否为预发布
           # prerelease: false
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
