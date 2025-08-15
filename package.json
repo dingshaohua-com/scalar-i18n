@@ -5,7 +5,10 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "build": "tsx ./bin/index.ts"
+    "full-task": "tsx ./bin/index.ts",
+    "replace-task":"tsx ./bin/replace-task.ts",
+    "build-task":"tsx ./bin/build.ts"
+    
   },
   "keywords": [],
   "author": "",
