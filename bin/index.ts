@@ -5,7 +5,7 @@ await import('./down-task')
 await import('./replace-task')
 
 // 开始构建
-// await import('./build-task')
+await import('./build-task')
 
 export { };
 
