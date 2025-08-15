@@ -23,4 +23,4 @@ jobs:
         run: pnpm i
       
       - name: 执行核心程序 
-        run: npm run build
+        run: npm run full-task
