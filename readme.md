@@ -41,3 +41,6 @@ To change to your country's language, please add your country's language file in
 Finally, change `const conf = zhCn` in `replace-task.ts` to your language configuration file!
 
 If everyone actively participates in this project, I will integrate all language files and build multi-language versions of the artifacts in the future!
+
+![](https://github.com/dingshaohua-com/qmusic-api/blob/main/preview/1.avif)   
+![](https://github.com/dingshaohua-com/qmusic-api/blob/main/preview/2.avif)
