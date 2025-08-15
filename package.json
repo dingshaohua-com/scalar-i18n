@@ -7,7 +7,7 @@
   "scripts": {
     "full-task": "tsx ./bin/index.ts",
     "replace-task":"tsx ./bin/replace-task.ts",
-    "build-task":"tsx ./bin/build.ts"
+    "build-task":"tsx ./bin/build-task.ts"
     
   },
   "keywords": [],
