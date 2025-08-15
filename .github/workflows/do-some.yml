@@ -24,3 +24,24 @@ jobs:
       
       - name: 执行核心程序 
         run: npm run full-task
+
+      - name: 创建 Release 并上传产物
+        uses: softprops/action-gh-release@v2
+        with:
+          files: scalar/packages/api-reference/dist/browser/standalone.js
+          # ② 自动使用当前 tag（例如 v1.2.3）作为 Release 名称
+          tag_name: ${{ github.ref_name }}
+          # # ③ 自定义标题
+          # name: Release ${{ github.ref_name }}
+          # # ④ Release 说明（支持 markdown）
+          # body: |
+          #   自动构建的浏览器独立版本。
+          #   - 文件：`standalone.js`
+          #   - Commit: ${{ github.sha }}
+          #   - 构建时间: ${{ github.event.head_commit.timestamp }}
+          # # ⑤ 是否为草稿
+          # draft: false
+          # # ⑥ 是否为预发布
+          # prerelease: false
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
